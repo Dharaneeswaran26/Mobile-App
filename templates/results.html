@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APK Scan Results</title>
+    <style>
+        /* Resetting default browser styles */
+        body, h1, h2, h3, ul, a {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Overall page styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1c1c1c;
+            color: #f0f0f0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        /* Main header styling */
+        h1 {
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            color: #00ccff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+            text-align: center;
+        }
+
+        /* Subheaders styling */
+        h2 {
+            margin-top: 20px;
+            font-size: 2em;
+            color: #ffcc00;
+            text-align: center;
+            border-bottom: 2px solid #444;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            width: 100%;
+            max-width: 800px;
+        }
+
+        h3 {
+            font-size: 1.5em;
+            color: #00ccff;
+            margin-bottom: 10px;
+        }
+
+        /* Section styling */
+        .section {
+            background-color: #2c2c2c;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            width: 100%;
+            max-width: 800px;
+            margin-bottom: 20px;
+            border-left: 5px solid #00ccff;
+            transition: border-left-color 0.3s;
+        }
+
+        .section:hover {
+            border-left-color: #ffcc00;
+        }
+
+        /* List styling */
+        ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 10px;
+        }
+
+        li {
+            background-color: #3c3c3c;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 4px;
+            border: 1px solid #444;
+            transition: background-color 0.3s, border-color 0.3s;
+        }
+
+        li:hover {
+            background-color: #444;
+            border-color: #00ccff;
+        }
+
+        /* Link styling */
+        a {
+            margin-top: 20px;
+            display: inline-block;
+            background-color: #00ccff;
+            color: #1c1c1c;
+            padding: 12px 20px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 1.2em;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        a:hover {
+            background-color: #009fbf;
+            transform: translateY(-2px);
+        }
+
+        /* Responsive design adjustments */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            h2 {
+                font-size: 1.5em;
+            }
+
+            h3 {
+                font-size: 1.2em;
+            }
+
+            a {
+                font-size: 1em;
+                padding: 10px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>APK Scan Results</h1>
+
+    <h2>Dynamic Analysis</h2>
+    <div class="section">
+        <h3>Activities</h3>
+        <ul>
+            {% for activity in trustworthiness.activities %}
+                <li>{{ activity }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <div class="section">
+        <h3>Permissions</h3>
+        <ul>
+            {% for permission in trustworthiness.permissions %}
+                <li>{{ permission }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <div class="section">
+        <h3>Receivers</h3>
+        <ul>
+            {% for receiver in trustworthiness.receivers %}
+                <li>{{ receiver }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <div class="section">
+        <h3>Services</h3>
+        <ul>
+            {% for service in trustworthiness.services %}
+                <li>{{ service }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <h2>Network Data</h2>
+    <div class="section">
+        <h3>URLs</h3>
+        <ul>
+            {% for url in urls %}
+                <li>{{ url }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <div class="section">
+        <h3>IP Addresses</h3>
+        <ul>
+            {% for ip in ips %}
+                <li>{{ ip }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <div class="section">
+        <h3>Network-related Classes</h3>
+        <ul>
+            {% for network_class in network_classes %}
+                <li>{{ network_class }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <a href="/">Upload another APK</a>
+</body>
+</html>

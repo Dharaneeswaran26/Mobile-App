@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile App Assessment Security Using Dynamic Analysis</title>
+    <style>
+        /* Resetting default browser styles */
+        body, h1, form, p {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Overall page styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1c1c1c;
+            color: #f0f0f0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        /* Header styling */
+        h1 {
+            margin-bottom: 20px;
+            font-size: 2em;
+            color: #00ccff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+            text-align: center;
+        }
+
+        /* Form container styling */
+        form {
+            background-color: #2c2c2c;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            width: 100%;
+            max-width: 400px;
+            margin-bottom: 20px;
+        }
+
+        /* File input styling */
+        input[type="file"] {
+            display: block;
+            margin: 20px 0;
+            width: 100%;
+            font-size: 1em;
+            padding: 10px;
+            border-radius: 4px;
+            border: 1px solid #444;
+            background-color: #3c3c3c;
+            color: #f0f0f0;
+            transition: border-color 0.3s, background-color 0.3s;
+        }
+
+        /* File input hover and focus effects */
+        input[type="file"]:hover, input[type="file"]:focus {
+            border-color: #00ccff;
+            background-color: #444;
+            outline: none;
+        }
+
+        /* Submit button styling */
+        input[type="submit"] {
+            background-color: #00ccff;
+            color: #1c1c1c;
+            border: none;
+            padding: 12px 20px;
+            font-size: 1.2em;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+            display: block;
+            width: 100%;
+        }
+
+        /* Submit button hover and focus effects */
+        input[type="submit"]:hover, input[type="submit"]:focus {
+            background-color: #009fbf;
+            transform: translateY(-2px);
+            outline: none;
+        }
+
+        /* Footer styling */
+        .footer {
+            font-size: 0.9em;
+            color: #aaa;
+            text-align: center;
+        }
+
+        /* Responsive design adjustments */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Mobile App Assessment Security Using Dynamic Analysis</h1>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" accept=".apk">
+        <input type="submit" value="Upload">
+    </form>
+    <p class="footer">Developed by CYBER KIDDIES</p>
+</body>
+</html>
